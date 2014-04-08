@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="sshelomentsev_group_launcher.launchConfigurationTypeImage1"
+            icon="sshelomentsev_group_launcher.launchConfigurationTypeImage1"
+            id="sshelomentsev_group_launcher.launchConfigurationTypeImage1">
+      </launchConfigurationTypeImage>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="sshelomentsev.grouplauncher.ui.GroupLauncherConfigurationTabGroup"
+            id="sshelomentsev_group_launcher.launchConfigurationTabGroup"
+            type="sshelomentsev_group_launcher.launchConfigurationType">
+      </launchConfigurationTabGroup>
+   </extension>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="sshelomentsev.grouplauncher.GroupLauncherDelegate"
+            id="sshelomentsev_group_launcher.launchConfigurationType"
+            modes="run,debug"
+            name="Launch group">
+      </launchConfigurationType>
+   </extension>
+
+
+</plugin>

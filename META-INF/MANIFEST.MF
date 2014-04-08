@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Sshelomentsev_group_launcher
+Bundle-SymbolicName: sshelomentsev_group_launcher;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: sshelomentsev.grouplauncher.GroupLauncher
+Bundle-Vendor: Sergey V Shelomentsev
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.debug.core;bundle-version="3.8.0",
+ org.eclipse.debug.ui;bundle-version="3.9.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: sshelomentsev.grouplauncher,
+ sshelomentsev.grouplauncher.ui
