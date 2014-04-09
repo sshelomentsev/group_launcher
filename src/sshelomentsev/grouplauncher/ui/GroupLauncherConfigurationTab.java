@@ -58,7 +58,7 @@ public class GroupLauncherConfigurationTab extends AbstractLaunchConfigurationTa
 		treeViewer.resetFilters();
 		viewerFilter = new ViewerFilter() {
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
-				if (element.toString().contains(configuration.getName())) {
+				if (element.toString().compareTo(configuration.getName()) == 0) {
 					return false;
 				}
 				return true;
