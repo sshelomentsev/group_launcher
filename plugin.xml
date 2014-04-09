@@ -2,14 +2,6 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
-      <launchConfigurationTypeImage
-            configTypeID="sshelomentsev_group_launcher.launchConfigurationTypeImage1"
-            icon="sshelomentsev_group_launcher.launchConfigurationTypeImage1"
-            id="sshelomentsev_group_launcher.launchConfigurationTypeImage1">
-      </launchConfigurationTypeImage>
-   </extension>
-   <extension
          point="org.eclipse.debug.ui.launchConfigurationTabGroups">
       <launchConfigurationTabGroup
             class="sshelomentsev.grouplauncher.ui.GroupLauncherConfigurationTabGroup"
@@ -25,6 +17,14 @@
             modes="run,debug"
             name="Launch group">
       </launchConfigurationType>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="sshelomentsev_group_launcher.launchConfigurationType"
+            icon="icons/run.png"
+            id="sshelomentsev_group_launcher.ConfigurationType">
+      </launchConfigurationTypeImage>
    </extension>
 
 

@@ -47,38 +47,38 @@ public class GroupProcess extends PlatformObject implements IProcess {
 		}
 	}
 
+
 	@Override
 	public String getLabel() {
-		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 	@Override
 	public ILaunch getLaunch() {
-		return groupLaunch;
+		return null;
 	}
+
 
 	@Override
 	public IStreamsProxy getStreamsProxy() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
+
 	@Override
-	public void setAttribute(String key, String value) {
-		// TODO Auto-generated method stub
-		
+	public void setAttribute(String key, String value) {		
 	}
+
 
 	@Override
 	public String getAttribute(String key) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
+
 	@Override
 	public int getExitValue() throws DebugException {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 

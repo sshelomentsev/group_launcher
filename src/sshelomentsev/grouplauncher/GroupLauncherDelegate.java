@@ -11,8 +11,8 @@ import org.eclipse.debug.core.model.LaunchConfigurationDelegate;
 public class GroupLauncherDelegate extends LaunchConfigurationDelegate{
 	public void launch(ILaunchConfiguration configuration, String mode, ILaunch launch, IProgressMonitor monitor) throws CoreException {
 		LinkedList<ILaunch> launches = new LinkedList<ILaunch>();
-		for (ILaunchConfiguration child : GroupLauncher.getDefault().getConfigurations(configuration)) {
-			launches.add(child.launch(mode, monitor));
+		for (ILaunchConfiguration nested : GroupLauncher.getDefault().getNestedConfigurations(configuration)) {
+			launches.add(nested.launch(mode, monitor));
 		}
 		launch.addProcess(new GroupProcess(launch, launches));
 	}

@@ -1,10 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Sshelomentsev_group_launcher
-Bundle-SymbolicName: sshelomentsev_group_launcher;singleton:=true
+Bundle-Name: %Plugin.name
+Bundle-SymbolicName: sshelomentsev.grouplauncher;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: sshelomentsev.grouplauncher.GroupLauncher
 Bundle-Vendor: Sergey V Shelomentsev
+Bundle-Description: Plugin, which contribute Group Launch Configuration Type
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.debug.core;bundle-version="3.8.0",
