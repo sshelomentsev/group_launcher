@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %Plugin.name
+Bundle-Name: Group Launcher
 Bundle-SymbolicName: sshelomentsev.grouplauncher;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: sshelomentsev.grouplauncher.GroupLauncher
