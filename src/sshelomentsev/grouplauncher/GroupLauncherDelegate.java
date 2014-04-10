@@ -8,10 +8,16 @@ import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.model.LaunchConfigurationDelegate;
 
-public class GroupLauncherDelegate extends LaunchConfigurationDelegate{
+import sshelomentsev.grouplauncher.ui.Messages;
+import sshelomentsev.grouplauncher.Model;
+
+public class GroupLauncherDelegate extends LaunchConfigurationDelegate {
 	public void launch(ILaunchConfiguration configuration, String mode, ILaunch launch, IProgressMonitor monitor) throws CoreException {
+		if (!Model.hasLoopDependent(configuration)) {
+			throw new AssertionError(Messages.incorrectConfiguration);
+		}
 		LinkedList<ILaunch> launches = new LinkedList<ILaunch>();
-		for (ILaunchConfiguration nested : GroupLauncher.getDefault().getNestedConfigurations(configuration)) {
+		for (ILaunchConfiguration nested : Model.getGroupLaunchConfiguration(configuration)) {
 			launches.add(nested.launch(mode, monitor));
 		}
 		launch.addProcess(new GroupProcess(launch, launches));

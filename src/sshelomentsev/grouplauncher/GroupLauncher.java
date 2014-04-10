@@ -1,14 +1,6 @@
 package sshelomentsev.grouplauncher;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Set;
-import java.util.List;
-
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.debug.core.DebugPlugin;
-import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -19,8 +11,7 @@ import org.osgi.framework.BundleContext;
 public class GroupLauncher extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "sshelomentsev_group_launcher"; //$NON-NLS-1$
-	public static final String NESTED_CONFIGURATIONS = "nestedConfigurations"; 
+	public static final String PLUGIN_ID = "sshelomentsev_group_launcher"; //$NON-NLS-1$ 
 
 	// The shared instance
 	private static GroupLauncher plugin;
@@ -71,26 +62,5 @@ public class GroupLauncher extends AbstractUIPlugin {
 	
 	public static void log (CoreException exc) {
 		GroupLauncher.getDefault().getLog().log(exc.getStatus());
-	}
-	
-	/**
-	 * 
-	 * @param configuration -- group launch configuration
-	 * @return -- list of a child configurations nested in the given group configuration
-	 * @throws CoreException
-	 */	
-	public List<ILaunchConfiguration> getNestedConfigurations(ILaunchConfiguration configuration) throws CoreException {
-		ILaunchConfiguration[] availableConfigurations = DebugPlugin.getDefault().getLaunchManager().getLaunchConfigurations();
-		String[] groupLaunchAttribute = configuration.getAttribute(GroupLauncher.NESTED_CONFIGURATIONS, "").split("@");
-		Set<String> nestedCongigurationNames = new HashSet<String>(Arrays.asList(groupLaunchAttribute));
-		List<ILaunchConfiguration> confs = new LinkedList<ILaunchConfiguration>();
-		for (ILaunchConfiguration nested : availableConfigurations) {
-			if (nestedCongigurationNames.contains(nested.getName())) {
-				confs.add(nested);
-				nestedCongigurationNames.remove(nested.getName());
-			}
-		}
-		return confs;
-	}
-	
+	}	
 }
