@@ -34,7 +34,7 @@ public class ConfigurationTabElements {
 
 		TableColumn colConfigurationName = new TableColumn(table, SWT.LEFT);
 		colConfigurationName.setText("Configuration name");
-		colConfigurationName.setWidth(300);
+		colConfigurationName.setWidth(320);
 		
 		TableColumn colConfigurationAction = new TableColumn(table, SWT.LEFT);
 		colConfigurationAction.setText("Action");
