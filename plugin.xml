@@ -2,28 +2,28 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
-      <launchConfigurationTabGroup
-            class="sshelomentsev.grouplauncher.ui.GroupLauncherConfigurationTabGroup"
-            id="sshelomentsev_group_launcher.launchConfigurationTabGroup"
-            type="sshelomentsev_group_launcher.launchConfigurationType">
-      </launchConfigurationTabGroup>
-   </extension>
-   <extension
          point="org.eclipse.debug.core.launchConfigurationTypes">
       <launchConfigurationType
-            delegate="sshelomentsev.grouplauncher.GroupLauncherDelegate"
-            id="sshelomentsev_group_launcher.launchConfigurationType"
+            delegate="ru.sshelomentsev.grouplaunch.Delegate"
+            id="ru.sshelomentsev.grouplaunch.launchConfigurationType"
             modes="run,debug"
-            name="Launch group">
+            name="Group Launch">
       </launchConfigurationType>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="ru.sshelomentsev.grouplaunch.ui.ConfigurationTabGroup"
+            id="ru.sshelomentsev.grouplaunch.launchConfigurationTabGroup"
+            type="ru.sshelomentsev.grouplaunch.launchConfigurationType">
+      </launchConfigurationTabGroup>
    </extension>
    <extension
          point="org.eclipse.debug.ui.launchConfigurationTypeImages">
       <launchConfigurationTypeImage
-            configTypeID="sshelomentsev_group_launcher.launchConfigurationType"
+            configTypeID="ru.sshelomentsev.grouplaunch.launchConfigurationType"
             icon="icons/run.png"
-            id="sshelomentsev_group_launcher.ConfigurationType">
+            id="ru.sshelomentsev.grouplaunch.launchConfigurationTypeImage1">
       </launchConfigurationTypeImage>
    </extension>
 
